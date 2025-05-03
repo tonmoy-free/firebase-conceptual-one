@@ -1,0 +1,137 @@
+[
+    {
+      "company": {
+        "name": "Swift Wheels",
+        "logo": "https://www.metleaf.org/wp-content/uploads/2020/09/75MetLeaf.jpg"
+      },
+      "vehicle": {
+        "id": "swv002",
+        "type": "SUV",
+        "make": "Honda",
+        "model": "CR-V",
+        "year": 2022,
+        "daily_rate": 49.50,
+        "photo": "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1440"
+      }
+    },
+    {
+      "company": {
+        "name": "City Cruiser Rentals",
+        "logo": "https://www.metleaf.org/wp-content/uploads/2020/09/75MetLeaf.jpg"
+      },
+      "vehicle": {
+        "id": "ccr003",
+        "type": "Sedan",
+        "make": "Nissan",
+        "model": "Sentra",
+        "year": 2021,
+        "daily_rate": 32.75,
+        "photo": "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1440"
+      }
+    },
+    {
+      "company": {
+        "name": "Adventure Auto",
+        "logo": "https://www.metleaf.org/wp-content/uploads/2020/09/75MetLeaf.jpg"
+      },
+      "vehicle": {
+        "id": "aar004",
+        "type": "Truck",
+        "make": "Ford",
+        "model": "F-150",
+        "year": 2024,
+        "daily_rate": 65.00,
+        "photo": "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1440"
+      }
+    },
+    {
+      "company": {
+        "name": "Luxury Drives Ltd.",
+        "logo": "https://www.metleaf.org/wp-content/uploads/2020/09/75MetLeaf.jpg"
+      },
+      "vehicle": {
+        "id": "ldl005",
+        "type": "Luxury",
+        "make": "BMW",
+        "model": "5 Series",
+        "year": 2023,
+        "daily_rate": 95.99,
+        "photo": "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1440"
+      }
+    },
+    {
+      "company": {
+        "name": "EcoRide Rentals",
+        "logo": "https://www.metleaf.org/wp-content/uploads/2020/09/75MetLeaf.jpg"
+      },
+      "vehicle": {
+        "id": "err006",
+        "type": "Hybrid",
+        "make": "Hyundai",
+        "model": "Ioniq",
+        "year": 2022,
+        "daily_rate": 42.50,
+        "photo": "https://www.metleaf.org/wp-content/uploads/2020/08/9-2.png"
+      }
+    },
+    {
+      "company": {
+        "name": "Family Wheels",
+        "logo": "https://www.metleaf.org/wp-content/uploads/2020/09/75MetLeaf.jpg"
+      },
+      "vehicle": {
+        "id": "fww007",
+        "type": "Minivan",
+        "make": "Chrysler",
+        "model": "Pacifica",
+        "year": 2021,
+        "daily_rate": 55.75,
+        "photo": "https://www.metleaf.org/wp-content/uploads/2020/08/9-2.png"
+      }
+    },
+    {
+      "company": {
+        "name": "Urban Go Cars",
+        "logo": "https://www.metleaf.org/wp-content/uploads/2020/09/75MetLeaf.jpg"
+      },
+      "vehicle": {
+        "id": "ugc008",
+        "type": "Subcompact",
+        "make": "Kia",
+        "model": "Rio",
+        "year": 2024,
+        "daily_rate": 29.99,
+        "photo": "https://www.metleaf.org/wp-content/uploads/2020/08/9-2.png"
+      }
+    },
+    {
+      "company": {
+        "name": "Prestige Car Hire",
+        "logo": "https://www.metleaf.org/wp-content/uploads/2020/09/75MetLeaf.jpg"
+      },
+      "vehicle": {
+        "id": "pch009",
+        "type": "Convertible",
+        "make": "Mazda",
+        "model": "MX-5",
+        "year": 2023,
+        "daily_rate": 75.00,
+        "photo": "https://www.metleaf.org/wp-content/uploads/2020/08/9-2.png"
+      }
+    },
+    {
+      "company": {
+        "name": "Budget Rides",
+        "logo": "https://www.metleaf.org/wp-content/uploads/2020/09/75MetLeaf.jpg"
+      },
+      "vehicle": {
+        "id": "bdr010",
+        "type": "Compact",
+        "make": "Ford",
+        "model": "Focus",
+        "year": 2020,
+        "daily_rate": 31.50,
+        "photo": "https://www.metleaf.org/wp-content/uploads/2020/08/9-2.png"
+      }
+    }
+  ]

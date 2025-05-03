@@ -1,22 +1,34 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 import { auth } from '../../firebase/firebase.config';
 import { ValueContext } from '../../RootLayout/RootLayout';
 
 const SignIn = () => {
 
-    const {handleLogin} = useContext(ValueContext);
-    
+    const { handleLogin, handleForgetPassword } = useContext(ValueContext);
+    const [userEmail, setUserEmail] = useState("");
+    const location = useLocation();
+    const from = location?.state?.from;
+    const navigate = useNavigate();
+
     // console.log(user);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        handleLogin(email, password);
-        
-        
+        handleLogin(email, password)
+            .then(result => {
+                console.log(result);
+                navigate(from ? from : "/");
+                alert("Sign in successfully.")
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
+
         // signInWithEmailAndPassword(auth,email,password)
         // .then(result=>{
         //     console.log(result);
@@ -60,7 +72,13 @@ const SignIn = () => {
                 <div className="space-y-4">
                     <div className="space-y-2">
                         <label htmlFor="email" className="block text-sm">Email address</label>
-                        <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
+                        <input 
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        onChange ={(e)=>setUserEmail(e.target.value)}
+                        placeholder="leroy@jenkins.com" 
+                        className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
                     </div>
                     <div className="space-y-2">
                         <div className="flex justify-between">
@@ -72,6 +90,7 @@ const SignIn = () => {
                 </div>
                 <button type="submit" className="hover:underline cursor-pointer w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Sign in</button>
             </form>
+            <button onClick={() => handleForgetPassword(userEmail)}>Forgot Password</button>
         </div>
     );
 };

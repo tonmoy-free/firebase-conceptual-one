@@ -2,23 +2,19 @@ import React, { createContext, useEffect, useState } from 'react';
 import { Outlet } from 'react-router';
 import Navbar from '../components/Navbar/Navbar';
 import { auth } from '../firebase/firebase.config';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import Footer from '../components/Footer/Footer';
 export const ValueContext = createContext();
 
 const RootLayout = () => {
     const [user, setUser] = useState(null);
-    console.log(user);
+    const [loading, setLoading] =useState(true);
 
 
     
     const handleLogin = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            console.log(result);
-        })
-        .catch(error => {
-            console.log(error);
-        });
+        return signInWithEmailAndPassword(auth, email, password);
+        
     }
 
 
@@ -39,17 +35,34 @@ const RootLayout = () => {
         signOut(auth)
         .then(result=>{
             console.log(result);
+            alert("Sign out successfully.")
         })
         .catch(error=>{
             console.log(error);
         })
     }
 
+    const handleForgetPassword =(email)=>{
+        console.log(email);
+        sendPasswordResetEmail(auth,email)
+        .then(() => {
+            // Password reset email sent!
+            // ..
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            
+          });
+    }
+
     const contextValues = {
         handleLogin,
         handleSignUp,
         user,
-        handleLogOut
+        loading,
+        handleLogOut,
+        handleForgetPassword
     }
 
 
@@ -57,6 +70,7 @@ const RootLayout = () => {
         const unsubscribe =  onAuthStateChanged(auth, (currentUser) => {
             console.log(currentUser);
             setUser(currentUser);
+            setLoading(false);
             if (currentUser) {
                 // User is signed in, see docs for a list of available properties
                 // https://firebase.google.com/docs/reference/js/auth.user
@@ -78,6 +92,7 @@ const RootLayout = () => {
                 <ValueContext value={contextValues}>
                     <Navbar></Navbar>
                     <Outlet></Outlet>
+                    <Footer></Footer>
                 </ValueContext>
 
             </div>
